@@ -1,2 +1,2 @@
 # Mudi
-Curso do Alura de spring mvc
+Curso do Alura usando spring mvc.
