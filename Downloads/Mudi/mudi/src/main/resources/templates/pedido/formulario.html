@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+
+<title>Cadastro de Novo Pedido</title>
+
+</head>
+<body>
+
+	<div th:replace="~{base :: logo}"></div>
+
+	<div class="container">
+	
+	<div th:replace="~{base :: titulo('Novo Pedido')}"></div>
+
+		<div class="card mt-3">
+			<form class="card-body" th:object="${novoPedido}"
+				action="/pedido/novo" method="POST">
+				
+				<div class="form-group">
+					<label for="nomeProduto">Produto</label> <input type="text"
+						th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control"
+						placeholder="Nome do produto" /> <small>Informe o nome do
+						produto</small>
+						<div class="invalid-feedback" th:errors="*{nomeProduto}">
+						</div>
+				</div>
+
+				<div class="form-group">
+					<label for="urlProduto">Url do Produto</label> <input
+						th:field="*{urlProduto}" th:errorclass="is-invalid" class="form-control" placeholder="Url do produto" /> <small>Informe
+						a url do produto</small>
+						<div class="invalid-feedback" th:errors="*{urlProduto}">
+						</div>
+				</div>
+				<div class="form-group">
+					<label for="imagemProduto">Imagem do Produto</label> <input
+						th:field="*{imagemProduto}" th:errorclass="is-invalid" class="form-control" placeholder="Imagem do produto" /> <small>Informe
+						a url da imagem do produto</small>
+						<div class="invalid-feedback" th:errors="*{imagemProduto}">
+						</div>
+				</div>
+				<div class="form-group">
+					<label for="descricaoProduto">Descrição</label>
+					<textarea th:filed="*{descricaoProduto}" class="form-control"
+						placeholder="Adicione detalhes importantes para ajudar o comprador"></textarea>
+				</div>
+				<button class="btn btn-primary" type="submit">Cadastrar</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
